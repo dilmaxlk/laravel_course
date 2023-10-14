@@ -14,21 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::get('/', function () {
     return view('home');
-});
-
-
-Route::get('/about', function () {
-    return view('about');
-});  
-
-
-Route::get('about/dilshan', function () {
-    return view('about');
-});
+})->name('frontend_name');
 
 Route::get('about', function () {
-    return "<h1>---This is About Us Page--- </h1>";
-});
-
+    return view('about');
+})->name('frontend_about');

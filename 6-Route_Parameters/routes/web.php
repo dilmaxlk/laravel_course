@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | 
 */
 
-//Copy and past this file to route folder and rename to web.php
 
 
 //--------Route Parameters-----------------------------------------------------

@@ -49,15 +49,25 @@
         <div class="mb_10">
             <label for="">Email:</label><br>
             <input type="text" name="email" class="@error('name') error1 @enderror" value="{{ old('email') }}">
+
+            @error('email')
+                 <div class="error">{{$message}}</div>
+            @enderror
+
         </div>
         <div class="mb_10">
             <label for="">Phone:</label><br>
-            <input type="text" name="phone" class="@error('name') error1 @enderror"  alue="{{ old('phone') }}">
+            <input type="text" name="phone" class="@error('name') error1 @enderror"  value="{{ old('phone') }}">
+
+            @error('phone')
+            <div class="error">{{$message}}</div>
+            @enderror
+
         </div>    
         <div class="mb_10">
             <label for="">Message:</label><br>
             <textarea name="message" cols="30" rows="10" class="@error('message') error1 @enderror"> {{ old('message') }}</textarea>
-            @error('name')
+            @error('message')
             <div class="error">{{ $message }}</div>
             @enderror
         </div>  

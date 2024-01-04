@@ -1,0 +1,1 @@
+<img src="{{ asset('uploads/image.jpeg') }}" alt="" style="width: 70%">

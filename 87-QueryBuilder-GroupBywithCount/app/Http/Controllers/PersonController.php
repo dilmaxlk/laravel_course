@@ -9,12 +9,11 @@ class PersonController extends Controller
 {
     public function index()
     {
+
+
+
         $result = DB::table('persons')
-        ->select('country', 
-            DB::raw('COUNT(*) as total_count'),
-            DB::raw('AVG(age) as avg_age'),
-            DB::raw('MAX(salary) as max_salary')
-            )
+        ->select('country', DB::raw('COUNT(*) as total_count'))
         ->groupBy('country')
         ->get();
 
@@ -22,28 +21,9 @@ class PersonController extends Controller
         foreach($result as $item){
             $country = $item->country;
             $count = $item->total_count;
-            $avg_age = $item->avg_age;
-            $max_salary = $item->max_salary;
-            
             echo 'Country:'.$country.'<br>';
-            echo 'Total Persons:'.$count.'<br>';
-            echo 'Avg Age:'.$avg_age.'<br>';
-            echo 'MAX Salary:'.$max_salary.'<br><br><br>';
+            echo 'Total Persons:'.$count.'<br><br><br>';
         }
-
-
-        // $result = DB::table('persons')
-        // ->select('country', DB::raw('COUNT(*) as total_count'))
-        // ->groupBy('country')
-        // ->get();
-
-
-        // foreach($result as $item){
-        //     $country = $item->country;
-        //     $count = $item->total_count;
-        //     echo 'Country:'.$country.'<br>';
-        //     echo 'Total Persons:'.$count.'<br><br><br>';
-        // }
 
 
        //echo DB::table('persons')->count();
